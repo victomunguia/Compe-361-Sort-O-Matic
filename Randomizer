@@ -1,0 +1,9 @@
+//This function generates a randomized array by utilizing the random function 
+
+private T[] data =new T[25]; //Declaring an array to store the data element depending if user used int or float
+Random randomizer=new Random(); //Using system.Random class to populate the array with integers
+//Need to research how to genrate random floats
+foreach(int i in data)
+{
+  data[i]=randomizer.Next()%10; //iterating through each array element to place a random value
+}
