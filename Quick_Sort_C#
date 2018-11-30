@@ -1,0 +1,43 @@
+//Quick sort
+        /*
+         * Left index should be zero
+         * Right is the lenght of the array minus one
+         */
+        private static void Quick_Sort(int[] userArray, int leftIndex, int rightIndex)
+        {
+            int pivotIndex;
+            if (leftIndex < rightIndex)
+            {
+                pivotIndex = PartitionQS(userArray, leftIndex, rightIndex);
+                if(pivotIndex > 1)
+                    Quick_Sort(userArray, leftIndex, pivotIndex - 1);
+                if (pivotIndex + 1 < rightIndex)
+                    Quick_Sort(userArray,pivotIndex+1,rightIndex);
+            }
+        }
+        //Helper for quick sort
+        private static int PartitionQS(int[] qsArray, int qsLeft, int qsRight)
+        {
+            int partPivot = qsArray[qsLeft];
+            while(true)
+            {
+                while(qsArray[qsLeft] < partPivot)
+                {
+                    qsLeft++;
+                }
+                while(qsArray[qsRight] > partPivot)
+                {
+                    qsRight--;
+                }
+                if (qsLeft < qsRight)
+                {
+                    int temp = qsArray[qsRight];
+                    qsArray[qsRight] = qsArray[qsLeft];
+                    qsArray[qsLeft] = temp;
+                }
+                else
+                {
+                    return qsRight;
+                }
+            }
+        }
