@@ -1,0 +1,21 @@
+//Insertion sort
+        /*
+         * -In-place
+         * -Simple implementation but less efficient then that of 
+         *  the more advance sorting i.e. merge sort
+         */
+        private static int[] Insertion_Sort(int[] userArray)
+        {
+            int i, j;
+            for(i = 1; i <= userArray.Length; i++)
+            {
+                j = i;
+                while ((j > 0) && (userArray[i] < userArray[j - 1]))
+                {
+                    userArray[j] = userArray[j - 1];
+                    --j;
+                }
+                userArray[j] = userArray[i];
+            }
+            return userArray;
+        }
