@@ -1,0 +1,20 @@
+//Selection Sort (Kind of like Bubble sort)
+        private static void Selection_Sort (int[] userArray)
+        {
+            int i;
+            int smallIndex;
+            int arrIndex;
+            for(i = 0; i < userArray.Length-1; i++)
+            {
+                smallIndex = i;
+                for(arrIndex = i + 1; arrIndex < userArray.Length; arrIndex++)
+                {
+                    if (userArray[arrIndex] < userArray[smallIndex])
+                        smallIndex = arrIndex;
+                }
+                //Swap
+                int temp = userArray[i];
+                userArray[i] = userArray[smallIndex];
+                userArray[smallIndex] = temp;
+            }
+        }
